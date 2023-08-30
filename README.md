@@ -1,6 +1,6 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/saadfrhan/cloudinary-photo-album/)
 
-# cloudinary-photo-album.vercel.app
+# Cloudinary Photo Album
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Deployment**: [Vercel](https://vercel.com/)
