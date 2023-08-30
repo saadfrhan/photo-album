@@ -7,7 +7,7 @@ export default function LayoutWrapper(
 	return (
 		<div>
 			<Header />
-			<div className='flex'>
+			<div className='flex gap-4'>
 				<SideMenu />
 				<div className='w-full px-4 pt-8'>{children}</div>
 			</div>

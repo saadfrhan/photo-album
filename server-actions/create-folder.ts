@@ -5,7 +5,10 @@ import { revalidatePath } from 'next/cache';
 
 export default async function createFolder(data: FormData) {
 	const name = data.get('name') as string;
-	console.log(name);
-	await cloudinary.v2.api.create_folder(name);
-	revalidatePath('/albums');
+	try {
+		await cloudinary.v2.api.create_folder(name);
+		revalidatePath('/');
+	} catch (error) {
+		console.error(JSON.stringify(error, null, 2));
+	}
 }

@@ -1,4 +1,4 @@
-import ImageEditor from "../../components/utils/image-editor";
+import ImageEditor from "@/components/utils/image-editor";
 
 export const metadata = {
   title: "Edit"

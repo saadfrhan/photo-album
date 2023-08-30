@@ -15,7 +15,8 @@ import manageLocation from "@/server-actions/manage-location";
 import { useRouter } from "next/navigation";
 
 export default function MoveDialog(
-	{ children, asset_folder, public_id, path, filename }: { children: React.ReactNode, asset_folder: string, public_id: string, path: '/favorites' | '/gallery', filename: string }
+	{ children, asset_folder, public_id, path, filename }: { children: React.ReactNode, asset_folder: string, public_id: string, 	path: "/" | "/favorites" | `/albums/${string}`; 
+	filename: string }
 ) {
 
 	const [_, startTransition] = useTransition();

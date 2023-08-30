@@ -17,7 +17,7 @@ import deleteFile from '@/server-actions/delete-file';
 import { useRouter } from 'next/navigation';
 
 export default function DeleteButton(
-	{ public_id, path }: { public_id: string, path: '/favorites' | '/gallery' }
+	{ public_id, path }: { public_id: string, 	path: "/" | "/favorites" | `/albums/${string}`}
 ) {
 	const [_, startTransition] = useTransition();
 	const { push } = useRouter();

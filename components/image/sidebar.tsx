@@ -1,8 +1,8 @@
-import { Folder } from '@/types';
+import { Folder, SidebarProps } from '@/types';
 import cloudinary from 'cloudinary';
-import { Button } from '../ui/button';
+import { Button, buttonVariants } from '../ui/button';
 import Link from 'next/link';
-import { MinusIcon, Trash2 } from 'lucide-react';
+import { MinusIcon } from 'lucide-react';
 import { H3 } from '../ui/h3';
 import { P } from '../ui/p';
 import {
@@ -17,20 +17,22 @@ import CreateDialog from '../album/create-dialog';
 import RenameDialog from './rename-dialog';
 import MoveDialog from './move-dialog';
 import DeleteButton from './delete-button';
+import { getFolderNames } from '@/server-actions/get-folder-names';
 
 export default async function Sidebar(
-	{ public_id, filename, path: _path, folder }: { public_id: string, filename: string, path: '/favorites' | '/gallery', folder: string }
+	{ public_id, filename, path, folder }: SidebarProps
 ) {
 
-	const { folders } = (await cloudinary.v2.api.root_folders()) as {
-		folders: Folder[];
-	}
+	const folders = await getFolderNames();
 
 	return (
-		<Card className='h-auto p-5'>
+		<Card className={`h-auto p-5 max-[1140px]:absolute max-[1140px]:right-2 max-[1140px]:top-[17rem]`}>
+			<Link href={`${path}`} className={buttonVariants({ variant: "link", className: "px-0 py-0" })}>
+				Close
+			</Link>
 			<div className='flex w-full justify-between'>
 				<H3>Display name</H3>
-				<RenameDialog id={public_id} filename={filename} path={_path}>
+				<RenameDialog id={public_id} filename={filename} path={path}>
 					<Button variant="link">Edit name</Button>
 				</RenameDialog>
 			</div>
@@ -40,7 +42,7 @@ export default async function Sidebar(
 					<AccordionTrigger>Manage Location</AccordionTrigger>
 					<AccordionContent>
 						<P>Created Albums:</P>
-						{folders.map(({ path, name }, index) => (
+						{folders && folders.map(({ name }, index) => (
 							<Button
 								key={index}
 								variant="ghost"
@@ -55,7 +57,7 @@ export default async function Sidebar(
 								</Link>
 								<P>
 									{name === folder ? 'Current' : (
-										<MoveDialog filename={filename} asset_folder={name} public_id={public_id} path={_path} >
+										<MoveDialog filename={filename} asset_folder={name} public_id={public_id} path={path} >
 											<Button variant="link">
 												Move
 											</Button>
@@ -70,7 +72,7 @@ export default async function Sidebar(
 					</AccordionContent>
 				</AccordionItem>
 			</Accordion>
-			<DeleteButton public_id={public_id} path={_path} />
+			<DeleteButton public_id={public_id} path={path} />
 		</Card>
 	)
 }

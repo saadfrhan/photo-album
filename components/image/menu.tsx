@@ -11,11 +11,10 @@ import {
 import { Folder, Heart, MoreVertical, Pencil } from "lucide-react";
 import Link from "next/link";
 import { useTransition } from "react";
+import { ImageMenuProps } from "@/types";
 
 export default function Menu(
-	{ public_id, filename,
-		isFavorite, path }: { public_id: string,
-			 isFavorite: boolean, filename: string, path: "/gallery" | "/favorites" }
+	{ public_id, filename, isFavorite, path }: ImageMenuProps
 ) {
 
 	const [_, startTransition] = useTransition();
@@ -31,9 +30,9 @@ export default function Menu(
 
 				<DropdownMenuContent>
 					<Link href={`${path}/?active_id=${public_id}&active_filename=${filename}`}>
-					<DropdownMenuItem>
-						<Folder className="mr-2 h-4 w-4" /> <span>Manage Location</span>
-					</DropdownMenuItem>
+						<DropdownMenuItem>
+							<Folder className="mr-2 h-4 w-4" /> <span>Manage Location</span>
+						</DropdownMenuItem>
 					</Link>
 					<Link
 						href={`/edit?public_id=${public_id}`}

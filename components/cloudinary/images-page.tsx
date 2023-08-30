@@ -1,23 +1,12 @@
-import { SearchResult } from '@/types';
+import { ImagesPageProps, SearchResult } from '@/types';
 import cloudinary from 'cloudinary';
 import H1 from '../ui/h1';
 import Upload from './upload';
 import Search from '../utils/search';
 import ImageGrid from './image-grid'
 
-interface Props { 
-	search: string;
-	heading: 'Gallery' | 'Favorites' | string;
-	folder?: string;
-	active: { 
-		id: string; 
-		filename: string;
-	}
-	path: "/gallery" | "/favorites" | `/albums/${string}`; 
-}
-
 export default async function ImagesPage(
-	{ search, active, heading, path, folder = "" }: Props
+	{ search, active, heading, path, folder = "" }: ImagesPageProps
 ) {
 
 	const query = `resource_type:image ${search ? `AND filename:${search}*` : ""} ${heading === 'Favorites' ? 'AND tags=favorite' : ''} ${folder ? `AND folder:${folder}` : ''}`;
@@ -36,7 +25,7 @@ export default async function ImagesPage(
 					<Upload />
 				</div>
 				<Search initialSearch={search} path={path} />
-				<ImageGrid results={results} path="/gallery" active_filename={active.filename} active_id={active.id} />
+				<ImageGrid results={results} path={path} active_filename={active.filename} active_id={active.id} />
 			</div>
 		</section>
 	)

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { CldImage } from "next-cloudinary";
 import { Button } from "@/components/ui/button";
@@ -24,7 +26,7 @@ export default function ImageEditor(
     { type: "blur", effects: [{ blur: 800 }] },
     { type: "grayscale", effects: [{ grayscale: true }] },
     { type: "pixelate", effects: [{ pixelate: 10 }] },
-    { type: "bg-remove", effects: [{ removeBackground: true, crop: "thumb" }] },
+    { type: "bg-remove" }
   ];
 
   return (
@@ -58,6 +60,13 @@ export default function ImageEditor(
         </div>
 
         <div className="grid grid-cols-2 gap-12">
+          <CldImage
+            src={public_id}
+            width="1400"
+            height="900"
+            alt={public_id}
+          />
+
           {transformations.map(({ type, effects }) => (
             transformation === type && (
               <CldImage
@@ -66,6 +75,7 @@ export default function ImageEditor(
                 width="1400"
                 height="900"
                 effects={effects}
+                removeBackground={type === "bg-remove"}
                 fillBackground={type === "generative-fill" ? { prompt } : undefined}
                 alt={public_id}
               />

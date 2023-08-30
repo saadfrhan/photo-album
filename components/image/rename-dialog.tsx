@@ -6,9 +6,10 @@ import { Input } from "@/components/ui/input";
 import renameFile from "@/server-actions/rename-file";
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { RenameDialogProps } from "@/types";
 
 export default function RenameDialog(
-	{ children, filename: _filename, id, path }: { children: React.ReactNode, filename: string, id: string, path: string }
+	{ children, filename: _filename, id, path }: RenameDialogProps
 ) {
 
 	const [filename, setFilename] = useState(_filename);

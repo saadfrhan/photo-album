@@ -2,10 +2,6 @@ import cloudinary from "cloudinary";
 import { AlbumCard } from "./album-card";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import createFolder from "@/server-actions/create-folder";
 import { Folder } from "@/types";
 import CreateDialog from "@/components/album/create-dialog";
 
