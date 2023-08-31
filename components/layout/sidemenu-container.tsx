@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRightCircle, HeartIcon, ImageIcon, X } from "lucide-react";
+import { ChevronRightCircle, HeartIcon, ImageIcon, MenuIcon, X } from "lucide-react";
 import { useState } from "react";
 import { H3 } from "../ui/h3";
 import { Button } from "../ui/button";
@@ -15,10 +15,10 @@ export default function SidemenuContainer(
   const [isSidemenuOpen, setIsSidemenuOpen] = useState(false)
 
   return (
-    <Card className={`pb-12 z-10 pr-4 rounded-none border-t-0 ${isSidemenuOpen ? "w-1/5 max-[1140px]:h-screen max-[1140px]:w-full max-[1140px]:absolute" : "max-[1140px]:hidden"}`}>
-      <div className="flex justify-end w-full mr-4 mt-4">
-        <Button size="icon" variant="ghost" onClick={() => setIsSidemenuOpen(!isSidemenuOpen)}>
-          {isSidemenuOpen ? <X /> : <ChevronRightCircle />}
+    <Card className={`pb-12 z-10 pr-4 rounded-none ${isSidemenuOpen ? "w-1/5 max-[1140px]:h-screen pt-4 max-[1140px]:w-full max-[1140px]:absolute" : "max-[1140px]:border-none max-[1140px]:p-0 max-[1140px]:absolute max-[1140px]:top-3 max-[1140px]:left-16 border-t-2 max-[1140px]:p-0"}`}>
+      <div className="flex justify-end w-full mr-4 mt-4 max-[1140px]:m-0">
+        <Button size="icon" variant="outline" onClick={() => setIsSidemenuOpen(!isSidemenuOpen)}>
+          {isSidemenuOpen ? <X /> : <MenuIcon />}
         </Button>
       </div>
       <div className={`space-y-4 py-4 ${!isSidemenuOpen ? 'hidden' : ''}`}>
