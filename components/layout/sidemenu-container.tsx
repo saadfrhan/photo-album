@@ -15,7 +15,7 @@ export default function SidemenuContainer(
   const [isSidemenuOpen, setIsSidemenuOpen] = useState(false)
 
   return (
-    <Card className={`pb-12 z-10 pr-4 rounded-none ${isSidemenuOpen ? "w-1/5 max-[1140px]:h-screen pt-4 max-[1140px]:w-full max-[1140px]:absolute" : "max-[1140px]:border-none max-[1140px]:p-0 max-[1140px]:absolute max-[1140px]:top-3 max-[1140px]:left-16 border-t-2 max-[1140px]:p-0"}`}>
+    <Card className={`pb-12 z-10 pr-4 rounded-none ${isSidemenuOpen ? "w-1/5 max-[1140px]:h-screen pt-4 max-[1140px]:w-full max-[1140px]:absolute" : "max-[1140px]:border-none max-[1140px]:p-0 max-[1140px]:absolute max-[1140px]:top-3 max-[1140px]:left-16 max-[1140px]:p-0"}`}>
       <div className="flex justify-end w-full mr-4 mt-4 max-[1140px]:m-0">
         <Button size="icon" variant="outline" onClick={() => setIsSidemenuOpen(!isSidemenuOpen)}>
           {isSidemenuOpen ? <X /> : <MenuIcon />}
