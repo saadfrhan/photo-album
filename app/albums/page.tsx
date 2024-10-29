@@ -1,7 +1,5 @@
 import cloudinary from "cloudinary";
 import { AlbumCard } from "./album-card";
-import { Button } from "@/components/ui/button";
-import { PlusIcon } from "lucide-react";
 import { Folder } from "@/types";
 
 export const metadata = {

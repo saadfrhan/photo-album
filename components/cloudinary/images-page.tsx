@@ -1,6 +1,5 @@
 import { ImagesPageProps, SearchResult } from '@/types';
 import cloudinary from 'cloudinary';
-import H1 from '../ui/h1';
 import ImageGrid from './image-grid';
 
 export default async function ImagesPage(
@@ -19,7 +18,7 @@ export default async function ImagesPage(
 		<section>
 			<div className="flex flex-col gap-8 pb-4">
 				<div className="flex justify-between">
-					<H1>{heading}</H1>
+					<h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>{heading}</h1>
 				</div>
 				<ImageGrid results={results} path={path} />
 			</div>

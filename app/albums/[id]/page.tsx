@@ -8,12 +8,8 @@ export async function generateMetadata(
 ) {
   const params = await props.params;
 
-  const {
-    id
-  } = params;
-
   return {
-    title: id,
+    title: params.id,
   }
 }
 

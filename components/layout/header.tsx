@@ -1,4 +1,3 @@
-import { Button } from '../ui/button'
 import { Card } from '../ui/card'
 import { SidebarTrigger } from '../ui/sidebar'
 import ThemeToggler from '../utils/theme-toggler'

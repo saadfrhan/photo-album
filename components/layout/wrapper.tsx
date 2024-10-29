@@ -1,5 +1,5 @@
 import Header from './header';
-import { SidebarProvider, SidebarTrigger } from '../ui/sidebar';
+import { SidebarProvider } from '../ui/sidebar';
 import { AppSidebar } from '../app-sidebar';
 import { Folder } from '@/types';
 import cloudinary from 'cloudinary';
