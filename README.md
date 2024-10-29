@@ -4,7 +4,7 @@
 - **Styling**: [shadcn-ui](https://ui.shadcn.com/) & [Tailwind CSS](https://tailwindcss.com/)
 - **Media Storage and Management**: [Cloudinary](https://cloudinary.com/)
 
-<img src="./preview.png" />
+<img src="./app/opengraph-image.png" />
 
 ## Running Locally
 
