@@ -4,15 +4,12 @@ import { Folder } from "@/types";
 
 export const metadata = {
   title: "Albums",
-  description: "Manage your albums",
 };
 
 export default async function AlbumsPage() {
   const { folders } = (await cloudinary.v2.api.root_folders()) as {
     folders: Folder[];
   };
-
-  console.log(folders)
 
   return (
     <section>
