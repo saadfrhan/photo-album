@@ -1,25 +1,27 @@
 import ImagesPage from "@/components/cloudinary/images-page";
-import { AlbumsPageProps } from "@/types";
+
+type Params = Promise<{ id: string }>
 
 export async function generateMetadata(
-  { params: { id } }:
-    { params: { id: string } }
+  props:
+    { params: Promise<{ id: string }> }
 ) {
+  const params = await props.params;
+
+  const {
+    id
+  } = params;
+
   return {
     title: id,
   }
 }
 
-export default async function AlbumsPage({
-  searchParams: { search, active_filename, active_id },
-  params: { id }
-}: AlbumsPageProps) {
-
+export default async function AlbumsPage(props: { params: Params }) {
+  const { id } = await props.params
   return <ImagesPage
-    active={{ id: active_id, filename: active_filename }}
     heading={id}
     folder={id}
-    search={search}
     path={`/albums/${id}`}
   />
 }

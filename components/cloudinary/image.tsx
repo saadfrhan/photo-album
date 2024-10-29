@@ -1,8 +1,7 @@
 "use client";
 
 import { CldImage } from 'next-cloudinary';
-import Menu from '../image/menu';
-import { AiFillStar } from 'react-icons/ai';
+import { AiFillHeart } from 'react-icons/ai';
 import { ImageProps } from '@/types';
 
 export default function Image(
@@ -11,12 +10,11 @@ export default function Image(
 
 	return (
 		<div className='relative'>
-			<CldImage src={src} {...props} />
-			{isFavorite && <AiFillStar
-				className='absolute left-2 bottom-2 text-yellow-400'
+			<CldImage src={src} {...props} priority />
+			{isFavorite && <AiFillHeart
+				className='absolute left-2 bottom-2 text-red-400'
 				size={24}
 			/>}
-			<Menu filename={props.alt} public_id={src} isFavorite={isFavorite ?? false} path={path} />
 		</div>
 	)
 }

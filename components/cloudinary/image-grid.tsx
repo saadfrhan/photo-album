@@ -1,9 +1,8 @@
-import { ImageGridProps, SearchResult } from '@/types';
+import { ImageGridProps } from '@/types';
 import Image from './image';
-import Sidebar from '../image/sidebar';
 
 export default function ImageGrid(
-	{ results, path, active_id = "", active_filename = "" }: ImageGridProps
+	{ results, path }: ImageGridProps
 ) {
 
 	const MAX_COLUMNS = 4;
@@ -14,8 +13,7 @@ export default function ImageGrid(
 		)
 	}
 
-	return (<div className={active_id ? `grid min-[1141px]:grid-cols-[2fr_1fr] gap-5` : ""}>
-		<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+	return (<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			{[getColumns(0), getColumns(1), getColumns(2), getColumns(3)].map(
 				(col, index) => (
 					<div key={index} className="flex flex-col gap-4">
@@ -34,14 +32,5 @@ export default function ImageGrid(
 					</div>
 				)
 			)}
-		</div>
-		{active_id && <Sidebar
-			folder={
-				results.resources.find(({ public_id }) => public_id === active_id)?.folder ?? "Undetectable"
-			}
-			public_id={active_id}
-			path={path}
-			filename={active_filename}
-		/>}
-	</div>)
+		</div>)
 }

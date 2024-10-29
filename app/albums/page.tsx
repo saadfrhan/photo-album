@@ -3,11 +3,10 @@ import { AlbumCard } from "./album-card";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 import { Folder } from "@/types";
-import CreateDialog from "@/components/album/create-dialog";
 
 export const metadata = {
-	title: "Albums",
-	description: "Manage your albums"
+    title: "Albums",
+    description: "Manage your albums"
 };
 
 export default async function AlbumsPage() {
@@ -20,11 +19,6 @@ export default async function AlbumsPage() {
 			<div className="flex flex-col gap-8">
 				<div className="flex justify-between">
 					<h1 className="text-4xl font-bold">Albums</h1>
-					<CreateDialog>
-						<Button size="icon" className="mr-4">
-							<PlusIcon />
-						</Button>
-					</CreateDialog>
 				</div>
 
 				<div className="grid grid-cols-3 gap-4">

@@ -7,8 +7,8 @@ import { ThemeProvider } from '@/components/utils/theme-provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-	title: 'Photo Albums Manager',
-	description: 'Experience the ultimate photo organization and sharing platform.',
+    title: 'Photo Albums Manager',
+    description: 'Experience the ultimate photo organization and sharing platform.'
 }
 
 export default function RootLayout({
@@ -17,9 +17,14 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body className={inter.className}>
-			<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+			<ThemeProvider 
+			  attribute="class"
+			  defaultTheme="system"
+			  enableSystem
+			  disableTransitionOnChange
+			  >
 					<LayoutWrapper>
 						{children}
 					</LayoutWrapper>
