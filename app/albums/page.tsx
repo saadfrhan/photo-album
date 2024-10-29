@@ -12,6 +12,8 @@ export default async function AlbumsPage() {
     folders: Folder[];
   };
 
+  console.log(folders)
+
   return (
     <section>
       <div className="flex flex-col gap-8">
