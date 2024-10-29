@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     "Experience the ultimate photo organization and sharing platform.",
 };
 
+export const revalidate = 604800
+
 export default function RootLayout({
   children,
 }: {
