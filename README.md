@@ -4,13 +4,15 @@
 - **Styling**: [shadcn-ui](https://ui.shadcn.com/) & [Tailwind CSS](https://tailwindcss.com/)
 - **Media Storage and Management**: [Cloudinary](https://cloudinary.com/)
 
+<img src="./preview.png">
+
 ## Running Locally
 
 ```bash
-git clone https://github.com/saadfrhan/cloudinary-photo-album.git
-cd cloudinary-photo-album
+git clone https://github.com/saadfrhan/photo-album.git
+cd photo-album
 pnpm install
 pnpm dev
 ```
 
-Create a `.env` file similar to [`.env.example`](https://github.com/saadfrhan/cloudinary-photo-album/blob/master/.env.example).
+Create a `.env` file similar to [`.env.example`](https://github.com/saadfrhan/photo-album/blob/master/.env.example).
