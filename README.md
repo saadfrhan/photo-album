@@ -1,12 +1,16 @@
-# Cloudinary Photo Album
+# Photo Album
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Styling**: [shadcn-ui](https://ui.shadcn.com/) & [Tailwind CSS](https://tailwindcss.com/)
-- **Media Storage and Management**: [Cloudinary](https://cloudinary.com/)
+A basic Next.js app using Tailwind CSS, shadcn/ui, and Cloudinary.  
+Made for **learning and tinkering**.
 
-<img src="./app/opengraph-image.png" />
+## Tech Stack
 
-## Running Locally
+- Next.js
+- Tailwind CSS
+- shadcn/ui
+- Cloudinary
+
+## Local Setup
 
 ```bash
 git clone https://github.com/saadfrhan/photo-album.git
@@ -15,4 +19,8 @@ pnpm install
 pnpm dev
 ```
 
-Create a `.env` file similar to [`.env.example`](https://github.com/saadfrhan/photo-album/blob/master/.env.example).
+Make a `.env` file based on [`.env.example`](./.env.example).
+
+---
+
+> **Note:** This is just a toy project, not intended for any real use.
